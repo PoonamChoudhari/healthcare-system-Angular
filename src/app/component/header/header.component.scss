@@ -1,0 +1,19 @@
+.header{
+    font-weight: 400;
+    border-bottom: 1px solid #f0f0f5;
+    width: 100%;
+    z-index: 2000;
+    top: 0;
+    padding: 20px;
+}
+.spacer{
+    flex: 1 1 auto;
+}
+.login-button{
+    border: 1px solid #d3d3d3;
+    color: #787887;
+}
+.login-button:hover {
+    color: #14bef0;
+    border: 1px solid #14bef0;
+}

@@ -1,0 +1,43 @@
+<mat-tab-group mat-align-tabs="center" animationDuration="0ms">
+    <mat-tab label="Login">
+        
+        <div class="loginForm">
+            <form action="" method="post">
+                <div class="username">
+                    <div class="userText">
+                        Mobile number/Email id
+                    </div>
+                    <input type="text" name="username" id="username">
+                </div>
+                <div class="password">
+                    <div class="passwordText">password</div>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div class="displaycheck">
+                    <div class="displayCheckBox">
+                        <input type="checkbox" name="rememberChekbox" id="rememberChekbox">Remember me for 30 days
+                        <input type="checkbox" name="otpCheckbox" id="otpCheckbox">Login with OTP instade of password
+                    </div>
+                    
+                    <a href="http://">Forgot Password</a>
+                </div>
+                <input type="button" value="login" class="loginButton btn btn-primary">
+            </form>
+        </div>
+    
+    </mat-tab>
+    <mat-tab label="Register">
+        <div class="loginForm">
+            <form action="" method="post">
+                <div class="heading">
+                    <span class="heading_title">Join Practo </span>
+                    <span class="heading_info">are you a doctor?</span>
+                    <span class="heading_link">register here</span>
+                </div>
+                <div class="name">
+                    <span class="fullname">FullName</span>
+                </div>
+            </form>
+        </div>
+    </mat-tab>
+  </mat-tab-group>
