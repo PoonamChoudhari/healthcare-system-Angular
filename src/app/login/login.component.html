@@ -1,6 +1,8 @@
 <mat-tab-group mat-align-tabs="center" animationDuration="0ms">
     <mat-tab label="Login">
-        
+        <div class="pageImage">
+            <img src="../../assets/images/login_image.jpg" style="float: left;">
+        </div>
         <div class="loginForm">
             <form action="" method="post">
                 <div class="username">
@@ -27,16 +29,41 @@
     
     </mat-tab>
     <mat-tab label="Register">
+        <div class="pageImage">
+            <img src="../../assets/images/login_image.jpg" style="float: left;">
+        </div>
         <div class="loginForm">
             <form action="" method="post">
                 <div class="heading">
                     <span class="heading_title">Join Practo </span>
-                    <span class="heading_info">are you a doctor?</span>
-                    <span class="heading_link">register here</span>
+                    <span class="heading_info">are you a doctor? </span>
+                    <span class="heading_link"> register here</span>
                 </div>
-                <div class="name">
-                    <span class="fullname">FullName</span>
+                <div class="fullname">
+                    <div class="userText">
+                       Full Name
+                    </div>
+                    <input type="text" name="fullname" id="fullname">
                 </div>
+                <div class="fullname">
+                    <div class="userText">
+                      Mobile number
+                    </div>
+                    <input type="text" name="fullname" id="fullname">
+                </div>
+                <div class="fullname">
+                    <div class="passwordText"> Confirm Password</div>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div class="displaycheck">
+                    <div class="displayCheckBox">
+                        <input type="checkbox" name="rememberChekbox" id="rememberChekbox">  Receive relavent offers and pramotional offers from practo.
+                       
+                    </div>
+                    
+                    <span class="terms_and_policies">by signing up, I agree to </span><a href="http://">term</a>
+                </div>
+                <input type="button" value="Send OTP" class="loginButton btn btn-primary">
             </form>
         </div>
     </mat-tab>
