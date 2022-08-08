@@ -1,5 +1,4 @@
 .container{
-    background-color: blue;
     padding: 5px;
     width: 100%;
 }
@@ -13,4 +12,50 @@
   }
   .card{
     flex-flow: row;
+  }
+
+  .listing-doctor-card{
+    padding: 24px 0;
+  }
+
+  .u-d-flex{
+    display: flex;
+  }
+
+  .sub-heading{
+    color: #696969;
+    font-size: large;
+  }
+
+  .sub-heading3{
+    color: #245883;
+    font-size: large;
+  }
+
+  .sub-heading2{
+    color: #696969;
+    font-size: medium;
+  }
+
+  .info-section{
+    padding: 0 16px;
+  }
+
+  .action-section{
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+  }
+
+  .action-section:hover button{
+   background-color: #245883;
+   color: white;
+  }
+
+  .hide{
+    display: none;
+  }
+
+  .show-on-hover:hover  .hide{
+    display: block;
   }

@@ -1,67 +1,37 @@
-<div class="container">
-    <div class="heading">
-        <div style="font-size: 30px; text-align:center;color: white; margin: 20px;">Your home for health</div>
-        <div style="text-align: center; font-size:20px; margin:20px; color: white;">Find and Book</div>
+<div class="container-fluid">
+  <div style="align-content: center;">
+    <div class="row" style="padding: 20px;">
+      <div *ngFor="let doctor of doctors" class="col-md-5 ml-5 mr-5" style="border: black solid 1px; margin: 20px;">
+        <div class="listing-doctor-card">
+          <div class="u-d-flex show-on-hover">
+            <div style="margin-top: -40px;">
+              <img style="height: 12rem;" src="../../../assets/images/doctor-icon.png">
+              <div class="hide">
+                <!-- <button class="btn ml-3">View Profile</button> -->
+              </div>
+            </div>
+            <div class="info-section">
+              <a class="h4" style="color:#245883;">
+                Dr. {{doctor.doctorName}}
+              </a>
+              <div>
+                <div class="u-d-flex">
+                  <span class="sub-heading mt-1">{{doctor.speciality}}</span>
+                </div>
+                <div class="mt-1">
+                  <span class="sub-heading2">{{doctor.yearOfExperience}} years of experience overall </span>
+                  <div class="mt-3 sub-heading3" *ngIf="getClinicName(doctor)">{{clinicName}}</div>
+                  <div class="sub-heading2 mt-2">{{doctor.address}} </div>
+                  <div class="sub-heading2 mt-2">Rs. {{doctor.consultation_fees}} Consultation fees at clinic </div>
+                </div>
+              </div>
+              <div class="action-section mb-1">
+                <button type="button" mat-stroked-button>Book Appointment</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="card">
-        <mat-card class="example-card">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>Dr. Nisha Kamat</mat-card-title>
-              <mat-card-subtitle>Gynecologist/Obstetrician</mat-card-subtitle>
-              <mat-card-subtitle>25 years experience overall</mat-card-subtitle>
-            </mat-card-header>
-            <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
-            <mat-card-content>
-              <p>
-                Kopar Khairne,Navi Mumbai  Practo Care Surgeries + 2 more
-                <br>₹800 Consultation fee at clinic
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-                <button mat-button class="btn btn-primary">View Profile </button>
-                <button mat-button class="btn btn-primary">Book Appointment</button>
-            </mat-card-actions>
-          </mat-card>
-
-          <mat-card class="example-card">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"> </div>
-              <mat-card-title>Dr. Nivedita Singh</mat-card-title>
-              <mat-card-subtitle>Gynecologist/Obstetrician</mat-card-subtitle>
-              <mat-card-subtitle>11 years experience overall</mat-card-subtitle>
-            </mat-card-header>
-            <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
-            <mat-card-content>
-              <p>
-                Belapur,Navi Mumbai  Acharya Shri Nanesh Hospital + 1 more
-                <br> ₹700 Consultation fee at clinic
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-                <button mat-button class="btn btn-primary">View Profile </button>
-                <button mat-button class="btn btn-primary">Book Appointment</button>
-            </mat-card-actions>
-          </mat-card>
-
-          <mat-card class="example-card">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>Dr. Saurabh Patil</mat-card-title>
-              <mat-card-subtitle>Gynecologist/Obstetrician </mat-card-subtitle>
-                <mat-card-subtitle>11 years experience overall</mat-card-subtitle>
-            </mat-card-header>
-            <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
-            <mat-card-content>
-              <p>
-                Belapur,Navi Mumbai  Acharya Shri Nanesh Hospital + 1 more
-                <br>₹700 Consultation fee at clinic
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button class="btn btn-primary">View Profile </button>
-              <button mat-button class="btn btn-primary">Book Appointment</button>
-            </mat-card-actions>
-          </mat-card>
-    </div>
+  </div>
 </div>
