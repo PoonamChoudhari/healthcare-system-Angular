@@ -1,0 +1,142 @@
+<div class="float-left h3 pl-5"> Update Profile </div>
+<div class="container-fluid pl-5 pr-5 pt-4">
+<form *ngIf='updateDoctorForm' [formGroup]="updateDoctorForm" (submit)="saveDoctor()">
+    <div class="row mt-4">
+        <div class="form-group col-md-6" style="padding: 10px;">
+            <mat-form-field class="mat-form-filed-width" appearance="fill">
+                <mat-label class="mat-label-color">Name</mat-label>
+                <input matInput formControlName="doctorName" required>
+                <mat-error *ngIf="updateDoctorForm.get('doctorName')?.hasError('required')">
+                    First Name is Required!
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group col-md-6" style="padding: 10px;">
+            <mat-form-field class="mat-form-filed-width" appearance="fill">
+                <mat-label class="mat-label-color">Mobile Number</mat-label>
+                <input matInput formControlName="mobile" required>
+                <mat-error *ngIf="updateDoctorForm.get('mobile')?.hasError('required')">
+                    Mobile Number is Required!
+                </mat-error>
+                <mat-error *ngIf="updateDoctorForm.get('mobile')?.hasError('pattern')">
+                    Please, Enter 10 digit Mobile Number!
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group col-md-6" style="padding: 10px;">
+            <mat-form-field class="mat-form-filed-width" appearance="fill">
+                <mat-label class="mat-label-color">Address</mat-label>
+                <input matInput formControlName="address" required>
+                <mat-error *ngIf="updateDoctorForm.get('address')?.hasError('required')">
+                    Address is Required!
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group col-md-6" style="padding: 10px;">
+            <mat-form-field class="mat-form-filed-width" appearance="fill">
+                <mat-label class="mat-label-color">Degree Name</mat-label>
+                <input matInput formControlName="degree" required>
+                <mat-error *ngIf="updateDoctorForm.get('degree')?.hasError('required')">Degree
+                    Degree Name is Required!
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group col-md-6" style="padding: 10px;">
+            <mat-form-field class="mat-form-filed-width" appearance="fill">
+                <mat-label class="mat-label-color">Speciality</mat-label>
+                <input matInput formControlName="speciality" required>
+                <mat-error *ngIf="updateDoctorForm.get('speciality')?.hasError('required')">
+                    Speciality is Required!
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group col-md-6" style="padding: 10px;">
+            <mat-form-field class="mat-form-filed-width" appearance="fill">
+                <mat-label class="mat-label-color">Total Years of Experience</mat-label>
+                <input matInput formControlName="yearOfExperience" required>
+                <mat-error *ngIf="updateDoctorForm.get('yearOfExperience')?.hasError('required')">
+                    Year
+                    Of
+                    Experience is Required!
+                </mat-error>
+                <mat-error *ngIf="updateDoctorForm.get('yearOfExperience')?.hasError('pattern')">
+                    Only Number is allowed!
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group col-md-6" style="padding: 10px;">
+            <mat-form-field class="mat-form-filed-width" appearance="fill">
+                <mat-label class="mat-label-color">Consultation Fees</mat-label>
+                <input matInput formControlName="consultationFees" required>
+                <mat-error *ngIf="updateDoctorForm.get('consultationFees')?.hasError('required')">
+                    Consultation Fees
+                    is Required!
+                </mat-error>
+                <mat-error *ngIf="updateDoctorForm.get('consultationFees')?.hasError('pattern')">
+                    Only Number is allowed!
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group col-md-6" style="padding: 10px;">
+            <mat-form-field class="mat-form-filed-width" appearance="fill">
+                <mat-label class="mat-label-color">Clinic Name</mat-label>
+                <input matInput formControlName="clinicName" required>
+                <mat-error *ngIf="updateDoctorForm.get('clinicName')?.hasError('required')">
+                    Clinic Name is
+                    Required!
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="submit-bottom-btn">
+        <button class="btn btn-success" type='submit'>Update Profile</button>
+    </div>
+</form>
+
+<form *ngIf='updatePatientForm' [formGroup]="updatePatientForm" (submit)="savePatient()">
+    <div class="row mt-4">
+        <div class="form-group col-md-6" style="padding: 10px;">
+            <mat-form-field class="mat-form-filed-width" appearance="fill">
+                <mat-label class="mat-label-color">Name</mat-label>
+                <input matInput formControlName="patientName" required>
+                <mat-error *ngIf="updatePatientForm.get('patientName')?.hasError('required')">
+                    First Name is Required!
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group col-md-6" style="padding: 10px;">
+            <mat-form-field class="mat-form-filed-width" appearance="fill">
+                <mat-label class="mat-label-color">Mobile Number</mat-label>
+                <input matInput formControlName="mobile" required>
+                <mat-error *ngIf="updatePatientForm.get('mobile')?.hasError('required')">
+                    Mobile Number is Required!
+                </mat-error>
+                <mat-error *ngIf="updatePatientForm.get('mobile')?.hasError('pattern')">
+                    Please, Enter 10 digit Mobile Number!
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group col-md-6" style="padding: 10px;">
+            <mat-form-field class="mat-form-filed-width" appearance="fill">
+                <mat-label class="mat-label-color">Address</mat-label>
+                <input matInput formControlName="address" required>
+                <mat-error *ngIf="updatePatientForm.get('address')?.hasError('required')">
+                    Address is Required!
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group col-md-6" style="padding: 10px;">
+            <mat-form-field class="mat-form-filed-width" appearance="fill">
+                <mat-label class="mat-label-color">Age</mat-label>
+                <input matInput formControlName="age" required>
+                <mat-error *ngIf="updatePatientForm.get('age')?.hasError('required')">
+                    Age is Required!
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="submit-bottom-btn">
+        <button class="btn btn-success" type='submit'>Update Profile</button>
+    </div>
+</form>
+</div>

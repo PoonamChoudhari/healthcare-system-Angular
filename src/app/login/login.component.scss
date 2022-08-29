@@ -1,43 +1,87 @@
-.mat-tab-group {
-    margin-bottom: 48px;
-   
+// .mat-tab-group {
+//     margin-bottom: 48px;
+
+//   }
+// .loginForm{
+//     float: right;
+//     width: 49%;
+//     margin: 35px;
+//     padding: 5px;
+//   }
+//   .displayCheckBox{
+//     margin-bottom: 10px;
+//   }
+//   .username {
+//     margin: 10px;
+//   }
+//   .password {
+//     margin: 10px;
+//   }
+//   .displaycheck{
+//     margin: 10px;
+//   }
+//   .userText{
+//     margin-bottom: 10px;
+//   }
+//   .passwordText{
+//     margin-bottom: 10px;
+//   }
+//   .loginButton{
+//     margin: 8px;
+//     width: 30%;
+//     border: 5px;
+//     height: 33px;
+//   }
+//   .heading_title{
+//     font-weight: bold;
+//   }
+//   .heading_info{
+//     padding-left: 40px;
+//   }
+//   .heading_link{
+//     color: orange;
+//   }
+
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+
+.h-custom {
+  height: calc(100% - 73px);
+}
+
+@media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
   }
-.loginForm{
-    float: right;
-    width: 49%;
-    margin: 35px;
-    padding: 5px;
-  }
-  .displayCheckBox{
-    margin-bottom: 10px;
-  }
-  .username {
-    margin: 10px;
-  }
-  .password {
-    margin: 10px;
-  }
-  .displaycheck{
-    margin: 10px;
-  }
-  .userText{
-    margin-bottom: 10px;
-  }
-  .passwordText{
-    margin-bottom: 10px;
-  }
-  .loginButton{
-    margin: 8px;
-    width: 30%;
-    border: 5px;
-    height: 33px;
-  }
-  .heading_title{
-    font-weight: bold;
-  }
-  .heading_info{
-    padding-left: 40px;
-  }
-  .heading_link{
-    color: orange;
-  }
+}
+
+.mat-form-filed-width {
+  width: 90%;
+}
+
+.mat-label-color {
+  color: #245883;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+::ng-deep .mat-tab-body-content {
+  overflow-x: hidden !important;
+}
+
+.submit-bottom-btn {
+  float: right;
+  margin-bottom: 2rem;
+}
+
+.progressBar {
+  margin-left: 50%;
+  margin-top: 15%;
+  z-index: 100;
+  position: absolute;
+}

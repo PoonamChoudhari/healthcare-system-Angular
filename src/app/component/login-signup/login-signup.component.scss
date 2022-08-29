@@ -1,0 +1,43 @@
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+
+.h-custom {
+  height: calc(100% - 73px);
+}
+
+@media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
+  }
+}
+
+.mat-form-filed-width {
+  width: 90%;
+}
+
+.mat-label-color {
+  color: #245883;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+::ng-deep .mat-tab-body-content {
+  overflow-x: hidden !important;
+}
+
+.submit-bottom-btn {
+  float: right;
+  margin-bottom: 2rem;
+}
+
+.progressBar {
+  margin-left: 50%;
+  margin-top: 15%;
+  z-index: 100;
+  position: absolute;
+}

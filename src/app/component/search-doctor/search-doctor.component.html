@@ -1,0 +1,25 @@
+<div class="container-fluid mt-5">
+    <div class="mt-5" style="display: flex;">
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Search Doctor By Speciality</mat-label>
+            <input matInput [formControl]="searchDoctorForm">
+            <mat-error *ngIf="searchDoctorForm.hasError('required')">
+                Speciality is <strong>required</strong>
+              </mat-error>
+          </mat-form-field>
+          <div class="action-section">
+            <button type="button" mat-stroked-button (click)="searchClicked()">Search</button>
+          </div>
+    </div>
+    <div class="mt-4">
+        <button mat-stroked-button color="primary" (click)="searchSpeciality('Dentist')">Dentist</button>
+        <button class="ml-3 mr-3" mat-stroked-button color="primary" (click)="searchSpeciality('Gynecologist')">Gynecologist/Obstetrician</button>
+        <button class="ml-3 mr-3" mat-stroked-button color="primary" (click)="searchSpeciality('General Physician')">General Physician</button>
+        <button mat-stroked-button color="primary" (click)="searchSpeciality('ENT')">Ear-nose-throat (ent) Specialist</button>
+        <button mat-stroked-button color="primary" (click)="searchSpeciality('Homoeopath')">Homoeopath</button>
+        <button mat-stroked-button color="primary" (click)="searchSpeciality('Pediatrician')">Pediatrician</button>
+        <button mat-stroked-button color="primary" (click)="searchSpeciality('Diabetologist')">Diabetologist</button>
+    </div>
+        <app-doctor [doctors]="searchDoctorList"></app-doctor>
+    
+</div>

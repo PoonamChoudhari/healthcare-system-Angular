@@ -1,4 +1,11 @@
-<div class="container-fluid">
+<div class="container-fluid mt-3">
+
+  <!-- <div class="page-header">
+    <div class="float-left h3"> {{title}} </div>
+    <div class="clearfix"></div>
+  </div> -->
+  
+  
   <div style="align-content: center;">
     <div class="row" style="padding: 20px;">
       <div *ngFor="let doctor of doctors" class="col-md-5 ml-5 mr-5" style="border: black solid 1px; margin: 20px;">
@@ -22,7 +29,7 @@
                   <span class="sub-heading2">{{doctor.yearOfExperience}} years of experience overall </span>
                   <div class="mt-3 sub-heading3" *ngIf="getClinicName(doctor)">{{clinicName}}</div>
                   <div class="sub-heading2 mt-2">{{doctor.address}} </div>
-                  <div class="sub-heading2 mt-2">Rs. {{doctor.consultation_fees}} Consultation fees at clinic </div>
+                  <div class="sub-heading2 mt-2"> {{ doctor.consultation_fees | currency:'INR':'symbol' }} Consultation fees at clinic </div>
                 </div>
               </div>
               <div class="action-section mb-1">

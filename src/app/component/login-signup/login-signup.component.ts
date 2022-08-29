@@ -3,19 +3,18 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { Doctor } from 'src/app/classes/doctor';
 import { DoctorService } from 'src/app/services/doctor.service';
-import { Patient } from '../classes/patient';
 import { ToastrService } from 'ngx-toastr';
-import { PatientService } from '../services/patient.service';
+import { Patient } from 'src/app/classes/patient';
+import { PatientService } from 'src/app/services/patient.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-login-signup',
+  templateUrl: './login-signup.component.html',
+  styleUrls: ['./login-signup.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginSignupComponent implements OnInit {
 
   selected = "0";
-  IsWait = true;
   doctorRole = 0;
   patientRole = 1;
   isLoginFormShow = true;
@@ -31,6 +30,9 @@ export class LoginComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
+
+    localStorage.clear();
+    console.log('data removed');
     
     this.doctorLoginForm = this.fb.group({
       emailId: ['', [Validators.required, Validators.email]],
@@ -108,7 +110,6 @@ export class LoginComponent implements OnInit {
       this.toastr.error('Please enter correct values!');
     }
     else {
-      this.IsWait = true;
       doctorObj.doctorName = this.addDoctorForm?.get('doctorName')?.value;
       doctorObj.address = this.addDoctorForm?.get('address')?.value;
       doctorObj.degree = this.addDoctorForm?.get('degree')?.value;
@@ -136,7 +137,6 @@ export class LoginComponent implements OnInit {
           this.toastr.success('Doctor registred successfully.');
           setTimeout(()=>{
             this.isLoginFormShow = true;
-            this.IsWait = true;
             this.addDoctorForm?.reset();
           },2000);
         }
@@ -156,7 +156,6 @@ export class LoginComponent implements OnInit {
       this.toastr.error('Please enter correct values!');
     }
     else {
-      this.IsWait = false;
       doctorObj.emailId = this.doctorLoginForm?.get('emailId')?.value;
       doctorObj.password = this.doctorLoginForm?.get('password')?.value;
       this.doctorService.doctorLogin(doctorObj)
@@ -166,14 +165,12 @@ export class LoginComponent implements OnInit {
         if(data){
           localStorage.setItem('doctorDataObj',JSON.stringify(doctorData));
           this.toastr.success('Doctor logged In successfully.');
-          this.IsWait = true;
           setTimeout(()=>{
             this.router.navigate(['/doctorDashboard']);
           },1000);
         }
       },
       (error) =>{
-        this.IsWait = true;
         this.toastr.error('Email Id/Password is incorrect.');
       }
       );
@@ -193,11 +190,13 @@ export class LoginComponent implements OnInit {
       patientObj.password = this.patientLoginForm?.get('password')?.value;
       this.patienService.patientLogin(patientObj)
       .subscribe((data) => {
+        let patientData = data['data'];
         console.log(data);
         if(data){
+          localStorage.setItem('patientDataObj',JSON.stringify(patientData));
           this.toastr.success('Patient logged In successfully.');
           setTimeout(()=>{
-            
+            this.router.navigate(['/patientDashboard/searchDoctor']);
           },2000);
         }
       },

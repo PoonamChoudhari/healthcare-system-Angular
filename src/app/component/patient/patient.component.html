@@ -1,0 +1,82 @@
+<div class="container-fluid mt-5">
+
+    <div class="page-header">
+      <div class="float-left h3"> {{title}} </div>
+      <!-- <div class="float-right">
+        <button routerLink="/addDoctor" class="pull-right btn btn-success" style="font-size: large; color: white !important; background-color: #245883 !important;" type="button">Add Doctor</button>
+      </div> -->
+      <div class="clearfix"></div>
+    </div>
+    
+    
+    <div style="align-content: center;">
+      <div class="row" style="padding: 20px;">
+        <div *ngFor="let patient of patientList" class="col-md-5 ml-5 mr-5" style="border: black solid 1px; margin: 20px;">
+          <div class="listing-doctor-card">
+            <div class="u-d-flex show-on-hover">
+              <div style="margin-top: -40px;">
+                <img style="height: 11rem; padding-top: 30px;" src="../../../assets/images/patient_logo.png">
+                <div class="hide">
+                </div>
+              </div>
+              <div class="info-section">
+                <a class="h4" style="color:#245883;">
+                  <span *ngIf="patient.gender == 0">Mr. {{patient.patientName}}</span>
+                  <span *ngIf="patient.gender == 1">Mrs. {{patient.patientName}}</span>
+                </a>
+                <div>
+                  <div class="u-d-flex">
+                    <div class="mt-2" style="display: flex;">
+                        <mat-icon style="color: #245883;"> phone</mat-icon>
+                        <span class="sub-heading ml-2"> {{patient.phone_number}}</span>
+                    </div>
+                   
+                  </div>
+                  <div class="mt-1">
+                    <div class="mt-2" style="display: flex;">
+                        <mat-icon style="color: #245883;"> email</mat-icon>
+                        <span class="sub-heading2 ml-2"> {{patient.emailId}}</span>
+                    </div>
+                    
+                    <div class="mt-2" style="display: flex;">
+                        <mat-icon style="color: #245883;"> location_on </mat-icon>
+                        <div class="sub-heading2"> {{patient.address}} </div>
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="isAddPatient == 'Y'" class="action-section mb-1">
+                  <button type="button" (click)="linkPatientToDoctor(patient.patientId)" mat-stroked-button>Add Patient</button>
+                </div>
+                <div *ngIf="isAddPatient == 'N'" class="action-section mb-1">
+                  <button type="button" (click)="viewProfile(patient)" mat-stroked-button data-toggle="modal" data-target="#exampleModalCenter">View Profile</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Detail Profile</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div *ngIf="selectedPatientProfile" class="modal-body">
+          <p class="mb-3" style="font-size: x-large;"><span style="color: #245883;">Patient Name: </span><span style="float: right;" class="mr-3">{{selectedPatientProfile.patientName}}</span></p>
+      <p class="mb-3" style="font-size: x-large;"><span style="color: #245883;">Phone Number: </span><span style="float: right;" class="mr-3">{{selectedPatientProfile.phone_number}}</span></p>
+      <p class="mb-3" style="font-size: x-large;"><span style="color: #245883;">Email Id: </span><span style="float: right;" class="mr-3">{{selectedPatientProfile.emailId}}</span></p>
+      <p class="mb-3" style="font-size: x-large;"><span style="color: #245883;">Location: </span><span style="float: right;" class="mr-3">{{selectedPatientProfile.address}}</span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,12 +1,25 @@
 <mat-toolbar class="header mat-elevation-z8">
     <img src="../../../assets/images/logo.png" style="width: 100px;">
-    <!-- <div class="spacer"></div> -->
-        <a mat-button routerLink="doctor"> Find Doctors</a>
-        <a mat-button> Video Consult</a>
-        <a mat-button> Medicines</a>
-        <a mat-button> Lab Tests</a>
-        <a mat-button> Surgeries</a>
-        <div class="spacer"></div>
-        <a mat-button class="login-button" routerLink="login"> Login/signUp</a>
-  </mat-toolbar>
-  
+    <span *ngIf="isDoctorLoggedIn">
+        <a mat-button (click)="patientList()"> Patients List </a>
+        <a mat-button (click)="addPatientToDoctor()"> Add Patient </a>
+        <a mat-button routerLink="/doctorDashboard/slotAvailability"> Slot Availability</a>
+    </span>
+    <span *ngIf="!isDoctorLoggedIn">
+        <a mat-button routerLink="searchDoctor"> Find Doctors By Speciality</a>
+        <a mat-button (click)="doctorList()"> Doctor List </a>
+    </span>
+    <div class="spacer"></div>
+    <a *ngIf="isDoctorLoggedIn">Dr. {{profileName}} </a>
+    <a *ngIf="!isDoctorLoggedIn"> Mr. {{profileName}} </a>
+    <button *ngIf="!isDoctorLoggedIn" routerLink="patientProfile" class="btn ml-1 mt-2 mr-3" matTooltipClass="tooltip-color"
+        matTooltip="View Profile">
+        <mat-icon style="color:#245883; font-size: 3rem;"> account_circle</mat-icon>
+    </button>
+    <button *ngIf="isDoctorLoggedIn" routerLink="doctorProfile" class="btn ml-1 mr-3" matTooltipClass="tooltip-color"
+        matTooltip="View Profile">
+        <!-- <mat-icon style="color:#245883; font-size: 3rem;"> account_circle</mat-icon> -->
+        <img style="height: 4rem;" src="../../../assets/images/doctor-icon.png">
+    </button>
+    | <a mat-button class="login-button" (click)="logout()"> Logout </a>
+</mat-toolbar>

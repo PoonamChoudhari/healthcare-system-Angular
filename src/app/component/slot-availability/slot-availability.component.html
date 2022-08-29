@@ -1,0 +1,14 @@
+<div class="container-fluid mt-5">
+    <h2>Available Slots</h2>
+    <div class="row">
+        <div class="col-md-2 mb-5" *ngFor="let slot of timeSlotArr">
+            <button (click)="tapped()" type="button" class="btn btn-secondary">{{slot | date:'hh:mm a'}}</button>
+        </div>
+    </div>
+
+
+    <h2>Create New Slots</h2>
+    <p>Start Time - <input [formControl]="startDateForm" type="time" id="start" name="startappt"></p>
+    <p>End Time - <input [formControl]="endDateForm" type="time" id="end" name="endappt"></p>
+    <p>{{1661744755066 | date:'HH:mm'}}</p>
+</div>

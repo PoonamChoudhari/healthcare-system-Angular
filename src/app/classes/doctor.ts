@@ -5,7 +5,15 @@ export class Doctor {
     degree: string | undefined;
     speciality: string | undefined;
     description: string | undefined;
-    yearOfExperience: string | undefined;
-    consultation_fees: string | undefined;
-    clinic: Array<string> | undefined;
+    yearOfExperience: number | undefined;
+    consultation_fees: number | undefined;
+    clinic: Object | undefined;
+    phone_number: number | undefined;
+    emailId: string | undefined;
+    gender: number | undefined;
+    password: string | undefined;
+    role: number | undefined;
+    start_time: string | undefined;
+    end_time: string | undefined;
+    visit_duration: string | undefined;
 }
